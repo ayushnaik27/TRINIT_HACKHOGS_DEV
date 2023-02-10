@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Determine User Location</title>
+</head>
+<body>
+  <div id="coordinates"></div>
+  <script>
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+    function showPosition(position) {
+      var lat = position.coords.latitude;
+      var lng = position.coords.longitude;
+      document.getElementById("coordinates").innerHTML = "Your location coordinates are: Latitude: " + lat + ", Longitude: " + lng;
+    }
+  </script>
+</body>
+</html>
