@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crop Suggestion Based on Location</title>
+  </head>
+  <body>
+    <h1>Crop Suggestion Based on Location</h1>
+    <p id="message">Fetching your location...</p>
+    <ul id="crops"></ul>
+    
+    <script>
+      window.onload = function() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          document.getElementById("message").innerHTML = "Geolocation is not supported by this browser.";
+        }
+      };
+      
+      function showPosition(position) {
+        document.getElementById("message").innerHTML = "Location successfully fetched.";
+        
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        
+        var crops = getSuitableCrops(latitude, longitude);
+        displayCrops(crops);
+      }
+      
+      function getSuitableCrops(latitude, longitude) {
+        var crops = [];
+        
+        // Add logic to determine the suitable crops based on the location
+        // For example, if the latitude is between 50 and 60, and the longitude is between 160 and 170, you can suggest crops that are suitable for temperate regions.
+        
+        crops.push("Wheat");
+        crops.push("Barley");
+        crops.push("Oats");
+        
+        return crops;
+      }
+      
+      function displayCrops(crops) {
+        var list = document.getElementById("crops");
+        
+        for (var i = 0; i < crops.length; i++) {
+          var item = document.createElement("li");
+          item.innerHTML = crops[i];
+          list.appendChild(item);
+        }
+      }
+    </script>
+  </body>
+</html>
