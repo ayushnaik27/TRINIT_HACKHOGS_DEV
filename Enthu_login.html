@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="main.css">
 </head>
-<body class="bg-gray-100 h-screen flex items-center justify-center">
+<body class="h-screen flex items-center justify-center bg-gray-800 ">
+
     <div class="w-full max-w-xs">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+        <form class="bg-gray-900 shadow-md rounded px-8 pt-6 pb-8 mb-4 ">
             <div class="mb-4">
-                <label class="block text-gray-700 font-bold mb-2" for="username">
+
+                <label class="block text-white font-bold mb-2" for="username">
                     Username
                 </label>
+
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
             </div>
+
+
             <div class="mb-6">
-                <label class="block text-gray-700 font-bold mb-2" for="password">
+                <label class="block text-white font-bold mb-2" for="password">
                     Password
                 </label>
                 <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
             </div>
+
+
             <div class="flex items-center justify-between">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                     <a href="enthusiasts.html">Sign In</a>
                 </button>
+
                 <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
                     Forgot Password?
                 </a>
             </div>
+
+
             <div class="my-4 text-center">
                 <button class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                     Sign In with Google
                 </button>
             </div>
+
             <hr class="my-4">
         </form>
     </div>

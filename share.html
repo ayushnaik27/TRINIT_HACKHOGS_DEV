@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Forum</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white py-4">
+        <div class="container mx-auto">
+            <h1 class="text-center text-3xl font-bold">Share!</h1>
+        </div>
+    </header>
+    <main class="container mx-auto py-4">
+        <div class="bg-white p-4 shadow-md">
+            <form>
+                <div class="mb-4">
+                    <label class="block font-bold mb-2" for="username">Username:</label>
+                    <input class="w-full border border-gray-400 p-2" type="text" id="username" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-bold mb-2" for="title">Title:</label>
+                    <input class="w-full border border-gray-400 p-2" type="text" id="title" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block font-bold mb-2" for="content">Content:</label>
+                    <textarea class="w-full border border-gray-400 p-2" id="content" rows="4" required></textarea>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="posts mt-4">
+        </div>
+    </main>
+    <footer class="bg-white py-4">
+        <div class="container mx-auto text-center">
+            <p>Copyright &copy; 2023 Simple Forum</p>
+        </div>
+    </footer>
+    <script>
+        const form = document.querySelector('form');
+        const posts = document.querySelector('.posts');
+
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const username = form.querySelector('#username').value;
+            const title = form.querySelector('#title').value;
+            const content = form.querySelector('#content').value;
+
+            const post = document.createElement('div');
+            post.innerHTML = `
+            <div class="bg-white p-4 shadow-md">
+                    <h2 class="text-xl font-bold">${title}</h2>
+                    <p class="text-gray-600">By ${username}</p>
+                    <p>${content}</p>
+                </div>
+            `;
+            posts.appendChild(post);
+
+            form.reset();
+        });
+    </script>
+</body>
+</html>
