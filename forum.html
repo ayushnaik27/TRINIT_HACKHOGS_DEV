@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Forum</title>
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"> -->
+    <link rel="stylesheet" href="main.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white py-4">
+<body class="bg-gray-700">
+    <header class="bg-green-700 py-4">
         <div class="container mx-auto">
             <h1 class="text-center text-3xl font-bold">Simple Forum</h1>
         </div>
     </header>
     <main class="container mx-auto py-4">
-        <div class="bg-white p-4 shadow-md">
+        <div class="bg-gray-800 p-4 shadow-md">
             <form>
                 <div class="mb-4">
-                    <label class="block font-bold mb-2" for="username">Username:</label>
+                    <label class="block font-bold mb-2 text-white" for="username">Username:</label>
                     <input class="w-full border border-gray-400 p-2" type="text" id="username" required>
                 </div>
                 <div class="mb-4">
-                    <label class="block font-bold mb-2" for="title">Title:</label>
+                    <label class="block font-bold mb-2 text-white" for="title">Title:</label>
                     <input class="w-full border border-gray-400 p-2" type="text" id="title" required>
                 </div>
                 <div class="mb-4">
-                    <label class="block font-bold mb-2" for="content">Content:</label>
+                    <label class="block font-bold mb-2 text-white" for="content">Content:</label>
                     <textarea class="w-full border border-gray-400 p-2" id="content" rows="4" required></textarea>
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
@@ -33,7 +34,7 @@
         <div class="posts mt-4">
         </div>
     </main>
-    <footer class="bg-white py-4">
+    <footer class="bg-green-700  py-4">
         <div class="container mx-auto text-center">
             <p>Copyright &copy; 2023 Simple Forum</p>
         </div>
